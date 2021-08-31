@@ -31,22 +31,36 @@ class App extends React.Component{
 
   render(){
     const { isLoading, movies } = this.state;
-    return <div>{isLoading ? 'Loading...' 
-    : movies.map((movie) => 
-    {
-      return (
-      <Movie
-      key = {movie.id}
-      id = {movie.id}
-      year = {movie.year}
-      title = {movie.title}
-      summary = {movie.summary}
-      poster = {movie.medium_cover_image}
-      />
-      );   // 여기서 movie 컴포넌트를 반환하면 됨.
-    })}
-    </div>; // 이 부분에 영화 데이터를 출력.
-  }
+    return ( // JSX의 가장 바깥쪽을 section으로 감쌈.
+      <section class = "container">
+      {isLoading ? (
+        // 여기는 loading을 위한 곳
+        <div class = "loader">
+          <span class="loader__text">Loading...</span>
+        </div>
+      ) : (
+        // Movie 컴포넌트들을 이 엘리먼트로 감쌈.
+        <div class = "movies">
+          {
+            movies.map((movie) => 
+             (
+              <Movie
+              key = {movie.id}
+              id = {movie.id}
+              year = {movie.year}
+              title = {movie.title}
+              summary = {movie.summary}
+              poster = {movie.medium_cover_image}
+              />
+             )
+            ) // 여기까지가 map()
+          }   // 여기서 movie 컴포넌트를 반환하면 됨.
+        </div>
+    )}
+    </section>
+    ); //이 부분이 return()부분. // 이 부분에 영화 데이터를 출력.
+  } // 이 부분이 render()부분
+
 
 
 
@@ -54,6 +68,6 @@ class App extends React.Component{
     this.getMovies();
   }
 
-}
+} // 클래스형 컴포넌트 
 
 export default App;
