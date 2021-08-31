@@ -10,7 +10,7 @@ class App extends React.Component{
   getMovies = async () => { //  괄호 앞에 붙여 getMovies()함수는 시간이 필요해라고 말하기.
     // 실제 시간이 필요한 대상 앞에 await를 붙임. 기다려 달라고 말하는 것.
     const movies = await axios.get('https://yts.mx/api/v2/list_movies.json'); // 반환 값 저장
-    console.log(movies);
+    console.log(movies);  // 얻어온 데이터를 출력
   }
 
   render(){
