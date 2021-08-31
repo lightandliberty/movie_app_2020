@@ -33,15 +33,15 @@ class App extends React.Component{
   render(){
     const { isLoading, movies } = this.state;
     return ( // JSX의 가장 바깥쪽을 section으로 감쌈.
-      <section class = "container">
+      <section className = "container">
       {isLoading ? (
         // 여기는 loading을 위한 곳
-        <div class = "loader">
-          <span class="loader__text">Loading...</span>
+        <div className = "loader">
+          <span className="loader__text">Loading...</span>
         </div>
       ) : (
         // Movie 컴포넌트들을 이 엘리먼트로 감쌈.
-        <div class = "movies">
+        <div className = "movies">
           {
             movies.map((movie) => 
              (
@@ -52,6 +52,7 @@ class App extends React.Component{
               title = {movie.title}
               summary = {movie.summary}
               poster = {movie.medium_cover_image}
+              genres = {movie.genres}
               />
              )
             ) // 여기까지가 map()
