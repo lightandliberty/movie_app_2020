@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-// 여긴 어디?
+
 class App extends React.Component{
   state = {
     isLoading: true,    // 변수 생성시 굳이 앞에 안 붙여도 되는 듯.
