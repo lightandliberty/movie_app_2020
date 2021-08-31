@@ -15,11 +15,13 @@ class App extends React.Component{
     data:
     {
       data:
-      {       // data:안에 data:안에. (즉 data-> data-> 안에서 movies를 대입함.
+      {       // data:안에 data:안에. (즉 data-> data-> 안에서 movies를 생성. 구조분해할당(변수)으로 저장하는 듯.
         movies
       },
     },
   } = await axios.get('https://yts.mx/api/v2/list_movies.json');
+  // this.setState({movies: movies}); 는 축약가능하므로, // 첫번째 movies는 state고, 두번째 movies는 구조분해할당으로 얻은 movies변수
+  this.setState({ movies, isLoading: false }); // 영화 Data를 얻어 왓으면, isLoading = false
   console.log(movies);
 
     // const movies = await axios.get('https://yts.mx/api/v2/list_movies.json'); // 반환 값 저장
