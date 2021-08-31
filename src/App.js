@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Movie from './Movie';  // Movie컴포넌트를 임포트
+import './App.css';   // App컴포넌트에는 App.css를 임포트
 
 class App extends React.Component{
   state = {
