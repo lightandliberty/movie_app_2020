@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Movie from './Movie';  // Movie컴포넌트를 임포트
 
 class App extends React.Component{
   state = {
@@ -19,18 +20,32 @@ class App extends React.Component{
         movies
       },
     },
-  } = await axios.get('https://yts.mx/api/v2/list_movies.json');
+  } = await axios.get('https://yts.mx/api/v2/list_movies.json?sort_by=rating');
   // this.setState({movies: movies}); 는 축약가능하므로, // 첫번째 movies는 state고, 두번째 movies는 구조분해할당으로 얻은 movies변수
   this.setState({ movies, isLoading: false }); // 영화 Data를 얻어 왓으면, isLoading = false
-  console.log(movies);
+  //  console.log(movies);
 
     // const movies = await axios.get('https://yts.mx/api/v2/list_movies.json'); // 반환 값 저장
     // console.log(movies.data.data.movies);  // 얻어온 데이터를 출력
 }
 
   render(){
-    const { isLoading } = this.state;
-    return <div>{isLoading ? 'Loading...' : 'We are ready'}</div>; // 이 부분에 영화 데이터를 출력.
+    const { isLoading, movies } = this.state;
+    return <div>{isLoading ? 'Loading...' 
+    : movies.map((movie) => 
+    {
+      return (
+      <Movie
+      key = {movie.id}
+      id = {movie.id}
+      year = {movie.year}
+      title = {movie.title}
+      summary = {movie.summary}
+      poster = {movie.medium_cover_image}
+      />
+      );   // 여기서 movie 컴포넌트를 반환하면 됨.
+    })}
+    </div>; // 이 부분에 영화 데이터를 출력.
   }
 
 
