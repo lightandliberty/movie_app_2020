@@ -1,5 +1,5 @@
 import React from 'react';
-// 여긴 어디지?? master에서 수정
+// 여긴 어디지?? master에서 수정을 code에서 수정
 class App extends React.Component{
   state = {
     isLoading: true,    // 변수 생성시 굳이 앞에 안 붙여도 되는 듯.
