@@ -9,9 +9,22 @@ class App extends React.Component{
 
   getMovies = async () => { //  괄호 앞에 붙여 getMovies()함수는 시간이 필요해라고 말하기.
     // 실제 시간이 필요한 대상 앞에 await를 붙임. 기다려 달라고 말하는 것.
-    const movies = await axios.get('https://yts.mx/api/v2/list_movies.json'); // 반환 값 저장
-    console.log(movies);  // 얻어온 데이터를 출력
-  }
+
+  const
+  {
+    data:
+    {
+      data:
+      {       // data:안에 data:안에. (즉 data-> data-> 안에서 movies를 대입함.
+        movies
+      },
+    },
+  } = await axios.get('https://yts.mx/api/v2/list_movies.json');
+  console.log(movies);
+
+    // const movies = await axios.get('https://yts.mx/api/v2/list_movies.json'); // 반환 값 저장
+    // console.log(movies.data.data.movies);  // 얻어온 데이터를 출력
+}
 
   render(){
     const { isLoading } = this.state;
