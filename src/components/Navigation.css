@@ -12,9 +12,7 @@
   border-radius: 5px;
 }
 
- {
   /*별도로 분리되어 아래쪽으로 Home About버튼이 이동함.*/
-}
 @media screen and (max-width: 1090px) {
   .nav {
     left: initial;
@@ -35,7 +33,7 @@
   font-weight: 600;
 }
 
-/* Home 아래로 한 줄 크기의 빈칸이 생김 */
+/* Home 아래로 한 줄 크기의 빈칸이 생김. */
 .nav a:not(:last-child) {
   margin-bottom: 20px;
 }
