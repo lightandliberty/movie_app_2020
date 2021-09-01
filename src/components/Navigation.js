@@ -5,12 +5,8 @@ import './Navigation.css';
 function Navigation(){
     return (
         <div className="nav">
-{/*            <a href="/">Home</a>
-            <a href="/about">About</a>
-    */}
-            
             <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
+            <Link to={{ pathname: "/about", state: { fromNavigation: true }}}>About</Link>
         </div>
     );
 }
