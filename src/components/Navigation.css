@@ -1,0 +1,41 @@
+.nav {
+  z-index: 1;
+  position: fixed;
+  top: 50px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px 20px;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  border-radius: 5px;
+}
+
+ {
+  /*별도로 분리되어 아래쪽으로 Home About버튼이 이동함.*/
+}
+@media screen and (max-width: 1090px) {
+  .nav {
+    left: initial;
+    top: initial;
+    bottom: 0px;
+    width: 100%;
+  }
+}
+
+/* Home About버튼이 위 아래로 분리되어 중앙으로 정렬하며 
+    글자색이 파란색 */
+.nav a {
+  text-decoration: none;
+  color: #0008fc;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Home 아래로 한 줄 크기의 빈칸이 생김 */
+.nav a:not(:last-child) {
+  margin-bottom: 20px;
+}

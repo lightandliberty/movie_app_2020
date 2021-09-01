@@ -56,7 +56,7 @@ class Home extends React.Component{
               />
              )
             ) // 여기까지가 map()
-          }   // 여기서 movie 컴포넌트를 반환하면 됨.
+          }   {/* 여기서 movie 컴포넌트를 반환하면 됨.*/}
         </div>
     )}
     </section>
